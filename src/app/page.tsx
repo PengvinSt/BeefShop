@@ -63,24 +63,24 @@ export default function Home() {
                 провінція Буенос-Айрес. Тут, у серці аргентинської гастрономії,
                 ми створюємо неповторні уподобання, надаючи вам можливість
                 насолодитися автентичними стейками найвищої якості. Ми пишаємося
-                тим, що використовуємо м'ясо добірних сортів, включаючи:
+                тим, що використовуємо м&apos;ясо добірних сортів, включаючи:
               </p>
 
               <ul className="about-list">
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Чорний Ангус</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Герефорд</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Лімузин</span>
                 </li>
@@ -117,17 +117,17 @@ export default function Home() {
               <span className="span">партнери</span>
             </h2>
             {/* <div className="slider">
-              <div><a href="https://famiglia.com.ua/vino-e-cucina/" target="_blank"><img src="./assets/images/logo_partners/1.png" alt="Партнер Vino-e-cucina Ресторан"></a></div>
-              <div><a href="https://zhar-i-myaso.choiceqr.com/" target="_blank"><img src="./assets/images/logo_partners/2.png" alt="Партнер Жаримясо Ресторан" ></a></div>
-              <div><a href="https://www.instagram.com/oxotanaovets/" target="_blank"><img src="./assets/images/logo_partners/3.png" alt="Партнер Охота на овец Ресторан" ></a></div>
-              <div><a href="https://beef.kyiv.ua/" target="_blank"><img src="./assets/images/logo_partners/4.png" alt="Партнер Beef Kiyv Ресторан" ></a></div>
-              <div><a href="https://biarritz.rest/" target="_blank"><img src="./assets/images/logo_partners/5.png" alt="Партнер Біаріц Biaritz Ресторан" ></a></div>
-              <div><a href="https://www.hyatt.com/en-US/hotel/ukraine/hyatt-regency-kyiv/kievh/home/Ukrainian" target="_blank"><img src="./assets/images/logo_partners/6.png" alt="Партнер Хаят hyatt Отель" target="_blank"></a></div>
-              <div><a href="https://praha-restaurant.com/" target="_blank"><img src="./assets/images/logo_partners/7_new.png" alt="Партнер Прага Ресторан" ></a></div>
-              <div><a href="https://www.villa-riviera.com.ua/" target="_blank"><img src="./assets/images/logo_partners/8.png" alt="Партнер Віла Рів'єра Villa Riviera Комплекс" ></a></div>
-              <div><a href="https://www.instagram.com/zharimyaso_odesa/" target="_blank"><img src="./assets/images/logo_partners/9.png" alt="Партнер Жаримясо Ресторан" ></a></div>
-              <div><a href="https://miteria.com.ua/" target="_blank"><img src="./assets/images/logo_partners/10.png" alt="Партнер мітеріа miteria Ресторан" ></a></div>
-              <div><a href="https://tsarske.kiev.ua/ru/" target="_blank"><img src="./assets/images/logo_partners/11.png" alt="Партнер Царське Село Ресторан" ></a></div>
+              <div><a href="https://famiglia.com.ua/vino-e-cucina/" target="_blank"><img src="/images/logo_partners/1.png" alt="Партнер Vino-e-cucina Ресторан"></a></div>
+              <div><a href="https://zhar-i-myaso.choiceqr.com/" target="_blank"><img src="/images/logo_partners/2.png" alt="Партнер Жаримясо Ресторан" ></a></div>
+              <div><a href="https://www.instagram.com/oxotanaovets/" target="_blank"><img src="/images/logo_partners/3.png" alt="Партнер Охота на овец Ресторан" ></a></div>
+              <div><a href="https://beef.kyiv.ua/" target="_blank"><img src="/images/logo_partners/4.png" alt="Партнер Beef Kiyv Ресторан" ></a></div>
+              <div><a href="https://biarritz.rest/" target="_blank"><img src="/images/logo_partners/5.png" alt="Партнер Біаріц Biaritz Ресторан" ></a></div>
+              <div><a href="https://www.hyatt.com/en-US/hotel/ukraine/hyatt-regency-kyiv/kievh/home/Ukrainian" target="_blank"><img src="/images/logo_partners/6.png" alt="Партнер Хаят hyatt Отель" target="_blank"></a></div>
+              <div><a href="https://praha-restaurant.com/" target="_blank"><img src="/images/logo_partners/7_new.png" alt="Партнер Прага Ресторан" ></a></div>
+              <div><a href="https://www.villa-riviera.com.ua/" target="_blank"><img src="/images/logo_partners/8.png" alt="Партнер Віла Рів'єра Villa Riviera Комплекс" ></a></div>
+              <div><a href="https://www.instagram.com/zharimyaso_odesa/" target="_blank"><img src="/images/logo_partners/9.png" alt="Партнер Жаримясо Ресторан" ></a></div>
+              <div><a href="https://miteria.com.ua/" target="_blank"><img src="/images/logo_partners/10.png" alt="Партнер мітеріа miteria Ресторан" ></a></div>
+              <div><a href="https://tsarske.kiev.ua/ru/" target="_blank"><img src="/images/logo_partners/11.png" alt="Партнер Царське Село Ресторан" ></a></div>
           </div> */}
           </div>
         </section>
@@ -151,31 +151,31 @@ export default function Home() {
 
               <ul className="about-list">
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Ретельна селекція бичків</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Годування та умови утримання</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">М&apos;ясообробка</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Сертифікація</span>
                 </li>
 
                 <li className="about-item">
-                  <ion-icon name="checkmark-outline"></ion-icon>
+                  {/* <ion-icon name="checkmark-outline"></ion-icon> */}
 
                   <span className="span">Доставка</span>
                 </li>
@@ -188,7 +188,7 @@ export default function Home() {
 
             <div className="about-banner-second">
               <img
-                src="./assets/images/2-min.png"
+                src="/images/2-min.png"
                 width="509"
                 height="459"
                 loading="lazy"
@@ -203,12 +203,12 @@ export default function Home() {
         <section className="section_quality">
         <div className="container">
           <section className="quality-logos">
-            <img src="./assets/images/quality2.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
-            <img src="./assets/images/quality4.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
-            <img src="./assets/images/quality1.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
-            <img src="./assets/images/quality3.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
-            <img src="./assets/images/quality5.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
-            <img src="./assets/images/quality6.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality2.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality4.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality1.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality3.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality5.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
+            <img src="/images/quality6.png" alt="DarGusto Даргусто якість і вишуканість качество стейков" />
           </section>
         </div>
       </section>
@@ -229,7 +229,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/Tenderloin_lomo1.png"
+                      src="/images/Tenderloin_lomo1.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -268,7 +268,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/lomo-sin-cordon.png"
+                      src="/images/lomo-sin-cordon.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -303,7 +303,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/Bife_Ancho.png"
+                      src="/images/Bife_Ancho.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -342,7 +342,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/striploin.png"
+                      src="/images/striploin.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -380,7 +380,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/striploinsteak.png"
+                      src="/images/striploinsteak.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -419,7 +419,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/tenderloin-file.png"
+                      src="/images/tenderloin-file.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -458,7 +458,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/cuberoll.png"
+                      src="/images/cuberoll.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -497,7 +497,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/newyork.png"
+                      src="/images/newyork.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -538,7 +538,7 @@ export default function Home() {
                 <div className="food-menu-card">
                   <div className="card-banner">
                     <img
-                      src="./assets/images/striploinsteak.png"
+                      src="/images/striploinsteak.png"
                       width="300"
                       height="300"
                       loading="lazy"
@@ -611,7 +611,7 @@ export default function Home() {
 
             <div className="about-banner-second">
               <img
-                src="./assets/images/delivery.png"
+                src="/images/delivery.png"
                 loading="lazy"
                 alt="DarGusto Даргусто доставка стейки"
                 className="w-100 about-img"
@@ -628,7 +628,7 @@ export default function Home() {
               <li className="banner-item banner-lg">
                 <div className="banner-card">
                   <img
-                    src="./assets/images/ribyey.jpg"
+                    src="/images/ribyey.jpg"
                     height="450"
                     loading="lazy"
                     alt="DarGusto Даргусто Вкусное мясо доставка Киев"
@@ -643,7 +643,7 @@ export default function Home() {
               <li className="banner-item banner-sm">
                 <div className="banner-card">
                   <img
-                    src="./assets/images/hero2.jpg"
+                    src="/images/hero2.jpg"
                     width="550"
                     height="465"
                     loading="lazy"
@@ -659,7 +659,7 @@ export default function Home() {
               <li className="banner-item banner-sm">
                 <div className="banner-card">
                   <img
-                    src="./assets/images/hero1.jpg"
+                    src="/images/hero1.jpg"
                     width="550"
                     height="465"
                     loading="lazy"
@@ -675,7 +675,7 @@ export default function Home() {
               <li className="banner-item banner-md">
                 <div className="banner-card">
                   <img
-                    src="./assets/images/stakebg.jpg"
+                    src="/images/stakebg.jpg"
                     width="550"
                     height="220"
                     loading="lazy"

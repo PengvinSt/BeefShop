@@ -11,7 +11,7 @@ export default function ToTopButton() {
       aria-label="Back to top"
       data-back-top-btn
     >
-      <ion-icon name="chevron-up"></ion-icon>
+      {/* <ion-icon name="chevron-up"></ion-icon> */}
     </a>
     </>
   )

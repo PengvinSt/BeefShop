@@ -28,20 +28,20 @@ export default function Footer() {
                     </p>
                     <ul className="social-list">
                     <li>
-                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank">
-                        <ion-icon name="logo-facebook"></ion-icon>
+                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank" rel="noopener">
+                        {/* <ion-icon name="logo-facebook"></ion-icon> */}
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank">
-                        <ion-icon name="logo-instagram"></ion-icon>
+                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank" rel="noopener">
+                        {/* <ion-icon name="logo-instagram"></ion-icon> */}
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank">
-                        <ion-icon name="logo-tiktok"></ion-icon>
+                        <a href="https://instagram.com/dargusto_official?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" className="social-link" target="_blank" rel="noopener">
+                        {/* <ion-icon name="logo-tiktok"></ion-icon> */}
                         </a>
                     </li>
                     </ul>
