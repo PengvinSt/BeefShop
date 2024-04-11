@@ -9,7 +9,7 @@ import { ICart } from "../store/cart"
 export const LocalStorageWorkerWrapper = ({ children }: { children: ReactNode }) => {
     const { store } = useAppContext()
     useEffect(()=> {
-        if (typeof document !== "undefined") {
+        if (typeof window !== "undefined") {
         const raw_data = localStorage.getItem('cart_info')
         if (raw_data !== null) {
             const data:ICart[] = JSON.parse(raw_data)

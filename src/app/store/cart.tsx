@@ -20,7 +20,7 @@ export default class CartStore {
     }
 
     updateLocalStorage(){
-        if (typeof document !== "undefined") {
+        if (typeof window !== "undefined") {
             localStorage.setItem('cart_info', JSON.stringify(this.cart))
         }
     }
@@ -49,7 +49,7 @@ export default class CartStore {
     
     acceptCart(){
         console.log(this.cart)
-        if (typeof document !== "undefined") {
+        if (typeof window !== "undefined") {
             localStorage.removeItem('cart_info')
         }
         this.clearCart()
