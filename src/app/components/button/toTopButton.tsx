@@ -1,5 +1,6 @@
 import React from 'react'
 import "./toTopButton.css"
+import { FaChevronUp } from 'react-icons/fa'
 
 
 export default function ToTopButton() {
@@ -11,7 +12,7 @@ export default function ToTopButton() {
       aria-label="Back to top"
       data-back-top-btn
     >
-      {/* <ion-icon name="chevron-up"></ion-icon> */}
+      <FaChevronUp/>
     </a>
     </>
   )

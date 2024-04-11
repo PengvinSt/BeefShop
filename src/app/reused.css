@@ -2,7 +2,9 @@
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-
+.margin-start {
+  margin-top: 86px;
+}
 .container {
     padding-inline: 15px;
   }
@@ -46,6 +48,8 @@
     padding-inline: var(--padding-inline, 35px);
     transition: var(--transition-1);
   }
+
+
   
   .btn-hover {
     position: relative;

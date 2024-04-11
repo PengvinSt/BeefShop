@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Rubik, Shadows_Into_Light, Roboto_Slab, Pacifico } from "next/font/google";
 import "./globals.css";
+import { StoreWrapper } from "./utils/context";
+import { LocalStorageWorkerWrapper } from "./utils/localStorage.wrapper";
 
 const roboto = Roboto({ weight:["400", "500"],subsets:["cyrillic", 'cyrillic-ext'] });
 
@@ -44,7 +46,11 @@ export default function RootLayout({
       +" "+ roboto_slab.className 
       +" "+ shadows_into_light.className 
       }>
+        <StoreWrapper>
+        <LocalStorageWorkerWrapper>
         {children}
+        </LocalStorageWorkerWrapper>
+        </StoreWrapper> 
       </body>
     </html>
   );
