@@ -1,10 +1,19 @@
+'use client'
+import { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../page.css";
 import "../reused.css"
+import Preload from "../components/preload";
 
 export default function Contacts() {
-  return (
+
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(()=>{
+    setIsLoading(false)
+  },[])
+
+  return isLoading ? <Preload/> :(
     <>
     <Header/>
     <main>

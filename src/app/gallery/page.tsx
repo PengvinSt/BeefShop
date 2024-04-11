@@ -1,8 +1,11 @@
+'use client'
 import Image from "next/image";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../page.css";
 import "../reused.css"
+import Preload from "../components/preload";
+import { useEffect, useState } from "react";
 
 type IBaner = {
     banner_size_class: "banner-item banner-md"| "banner-item banner-sm" | "banner-item banner-lg"
@@ -49,7 +52,12 @@ const baner:IBaner[] = [
 ]
 
 export default function Gallery() {
-  return (
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(()=>{
+      setIsLoading(false)
+    },[])
+  
+    return isLoading ? <Preload/> :(
     <>
     <Header/>
     <main>

@@ -1,9 +1,12 @@
+'use client'
 import Image from "next/image";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import "../page.css";
 import "../reused.css"
 import { FaCheck } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Preload from "../components/preload";
 
 type IPartners = {
     href: string,
@@ -90,7 +93,12 @@ const quality:IQuality[] = [
 ]
 
 export default function About() {
-  return (
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(()=>{
+      setIsLoading(false)
+    },[])
+  
+    return isLoading ? <Preload/> :(
     <>
     <Header/>
     <main>
