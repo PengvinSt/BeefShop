@@ -19,9 +19,15 @@ export default class CartStore {
         this.cart = []
     }
 
+    updateLocalStorage(){
+        if (typeof document !== "undefined") {
+            localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        }
+    }
+
     fillCartOnce(cart:ICart){
         this.cart.push(cart)
-        localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        this.updateLocalStorage()
     }
 
     fillCartFull(cart:ICart[]){
@@ -30,7 +36,7 @@ export default class CartStore {
 
     deleteByIndex(index:number){
         this.cart.splice(index,1)
-        localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        this.updateLocalStorage()
     }
 
     updateAmmountByIndex(index:number) {
@@ -38,12 +44,14 @@ export default class CartStore {
             ...this.cart[index],
             amount: this.cart[index].amount +1
         }
-        localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        this.updateLocalStorage()
     }
     
     acceptCart(){
         console.log(this.cart)
-        localStorage.removeItem('cart_info')
+        if (typeof document !== "undefined") {
+            localStorage.removeItem('cart_info')
+        }
         this.clearCart()
     }
 
@@ -70,7 +78,7 @@ export default class CartStore {
             ...this.cart[index],
             amount: this.cart[index].amount -1
         }
-        localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        this.updateLocalStorage()
         return
     }
 }
