@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Roboto, Rubik, Shadows_Into_Light, Roboto_Slab, Pacifico } from "next/font/google";
 import "./globals.css";
+import dynamic from 'next/dynamic'
+const DynamicStoreWrapper = dynamic(() => import('./utils/context').then(mod => mod.StoreWrapper), {
+  ssr: false
+})
+const DynamicLocalStorageWorkerWrapper = dynamic(()=> import('./utils/localStorage.wrapper').then(mod => mod.LocalStorageWorkerWrapper), {
+  ssr: false
+})
 import { StoreWrapper } from "./utils/context";
 import { LocalStorageWorkerWrapper } from "./utils/localStorage.wrapper";
 
@@ -46,11 +53,11 @@ export default function RootLayout({
       +" "+ roboto_slab.className 
       +" "+ shadows_into_light.className 
       }>
-        <StoreWrapper>
-        <LocalStorageWorkerWrapper>
+        <DynamicStoreWrapper>
+        <DynamicLocalStorageWorkerWrapper>
         {children}
-        </LocalStorageWorkerWrapper>
-        </StoreWrapper> 
+        </DynamicLocalStorageWorkerWrapper>
+        </DynamicStoreWrapper> 
       </body>
     </html>
   );
