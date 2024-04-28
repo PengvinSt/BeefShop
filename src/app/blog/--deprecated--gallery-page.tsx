@@ -6,15 +6,9 @@ import "../page.css";
 import "../reused.css"
 import Preload from "../components/preload";
 import { useEffect, useState } from "react";
+import { IBaner } from "../interfaces/baner";
 
-type IBaner = {
-    banner_size_class: "banner-item banner-md"| "banner-item banner-sm" | "banner-item banner-lg"
-    src:string,
-    width:number,
-    height:number,
-    alt:string,
-    banner_text:string
-}
+
 
 const baner:IBaner[] = [
     {

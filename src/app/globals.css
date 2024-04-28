@@ -81,8 +81,15 @@
   box-sizing: border-box;
 }
 
-li {
+header li {
   list-style: none;
+}
+
+footer li {
+  list-style: none;
+}
+li {
+  color: black;
 }
 
 a {
@@ -176,4 +183,3 @@ body.active {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--red);
 }
-

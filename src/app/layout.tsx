@@ -10,16 +10,10 @@ import dynamic from 'next/dynamic'
 // })
 import { StoreWrapper } from "./utils/context";
 import { LocalStorageWorkerWrapper } from "./utils/localStorage.wrapper";
+import ToTopButton from "./components/button/toTopButton";
 
 const roboto = Roboto({ weight:["400", "500"],subsets:["cyrillic", 'cyrillic-ext'] });
 
-const rubik = Rubik({ weight:["400", "500", "600", "700"],subsets:["cyrillic", 'cyrillic-ext'] });
-
-const roboto_slab = Roboto_Slab({ weight:["300","400", "500"], display:"swap" ,subsets:["cyrillic", 'cyrillic-ext']});
-
-const pacifico = Pacifico({weight:"400", display:"swap", subsets:["cyrillic", 'cyrillic-ext']})
-
-const shadows_into_light = Shadows_Into_Light({ weight:"400",display:"swap",subsets:["latin"]});
 
 export const metadata: Metadata = {
   title: "DarGusto",
@@ -48,16 +42,13 @@ export default function RootLayout({
       id="top" 
       className={
       roboto.className 
-      +" "+ pacifico.className 
-      +" "+ rubik.className 
-      +" "+ roboto_slab.className 
-      +" "+ shadows_into_light.className 
       }>
         <StoreWrapper>
         <LocalStorageWorkerWrapper>
         {children}
         </LocalStorageWorkerWrapper>
         </StoreWrapper> 
+        <ToTopButton/>
       </body>
     </html>
   );

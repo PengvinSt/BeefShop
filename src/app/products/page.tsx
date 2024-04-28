@@ -8,111 +8,18 @@ import { useEffect, useState } from "react";
 import Preload from "../components/preload";
 import { observer } from "mobx-react";
 import { useAppContext } from "../utils/context";
+import { IFood } from "../interfaces/food";
+import { IDtoFood } from "../interfaces/dto";
+import { shopBaseUrl } from "../api/app";
 
-type IFood = {
-    src:string,
-    width:number,
-    height:number,
-    alt:string,
-    food_category:string,
-    food_category_additional?:string,
-    food_name:string,
-    food_price:number
+const imageSrcLoader = ({src}: {src: string}) => {
+    return `${shopBaseUrl}${src}`
 }
 
-const food:IFood[] = [
-    {
-        src:'/images/Tenderloin_lomo1.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Заказати Tenderloin Lomo Con Cordon Вирізка Відруб Мармурована Яловичина',
-        food_category:'Tenderloin Con Cordon',
-        food_name:'Вирізка Відруб',
-        food_price:1566
-    },
-    {
-        src:'/images/lomo-sin-cordon.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Tenderloin Sin Cordon lomo вирізка відруб витриманий Заказати',
-        food_category:'Tenderloin Sin Cordon',
-        food_category_additional:'Витриманий*',
-        food_name:'Вирізка Відруб (зачищена)',
-        food_price:1596
-    },
-    {
-        src:'/images/Bife_Ancho.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Bife Ancho Sin Tapa, Con Cordon | Рібай Відруб Cube Roll Замовити',
-        food_category:'Rib EYE Cube Roll Sin Tapa, Sin Cordon',
-        food_name:'Рібай Відруб',
-        food_price:1560
-    },
-    {
-        src:'/images/striploin.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Стріплойн Відруб Bife Angosto StripLoin Con Cordon Замовити',
-        food_category:'StripLoin Con Cordon',
-        food_name:'Стріплоін Відруб',
-        food_price:1458
-    },
-    {
-        src:'/images/striploinsteak.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Стріплойн Стейк StripLoin Con Cordon Bife Angosto Замовити',
-        food_category:'StripLoin Con Cordon',
-        food_category_additional:'Витриманий*',
-        food_name:'Стріплоін Відруб',
-        food_price:1458
-    },
-    {
-        src:'/images/tenderloin-file.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Tenderloin Філе Мінйон Стейк Порційний Заказати',
-        food_category:'Tenderloin',
-        food_category_additional:'Витриманий*',
-        food_name:'Філе Міньон | Стейк Порційний',
-        food_price:2950
-    },
-    {
-        src:'/images/cuberoll.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Bife Ancho Sin Tapa, Sin Cordon Рібай Cube Roll Стейк Порційний Замовити',
-        food_category:'Rib EYE Cube Roll Sin Tapa, Sin Cordon',
-        food_category_additional:'Витриманий*',
-        food_name:'Рібай Стейк Порційний',
-        food_price:1632
-    },
-    {
-        src:'/images/newyork.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Нью-Йорк Стейк | Bife Ancho Con Замовити',
-        food_category:'StripLoin Con Tapa',
-        food_category_additional:'Витриманий*',
-        food_name:'Нью-Йорк Стейк Порційний',
-        food_price:1632
-    },
-    {
-        src:'/images/striploinsteak.png',
-        width:300,
-        height:300,
-        alt:'DarGusto Даргусто Стріплойн Стейк StripLoin Con Cordon Bife Angosto Замовити',
-        food_category:'StripLoin Con Cordon',
-        food_category_additional:'Витриманий*',
-        food_name:'Стріплоін Стейк Порційний',
-        food_price:1518
-    }
-]
-
 function Products() {
-    const { store } = useAppContext()
+    const { store, api } = useAppContext()
     const [isLoading, setIsLoading] = useState(true)
+    const [products, setProducts] = useState<IDtoFood[]>([])
 
     const addToCart = (food:IFood) => {
         const newCartItem = {
@@ -122,8 +29,17 @@ function Products() {
         store.cart.addToCart(newCartItem)
     }
 
+    
+
+    const getInitialData = async () => {
+        const data:IDtoFood[] = await api.shop.getProductsAll()
+        setProducts(data)
+    }
+   
   useEffect(()=>{
+    getInitialData()
     setIsLoading(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return isLoading ? <Preload/> : (
     <>
@@ -139,34 +55,36 @@ function Products() {
                     Вибір стейків
                     </h2>
                     <ul className="food-menu-list">
-                        {food.map((food, i)=> 
+                        {products.map(({attributes}, i)=> 
                             <li key={i}>
                                 <div className="food-menu-card">
                                     <div className="card-banner">
+                                        <div className="image-holder-md">
                                         <Image
-                                        src={food.src}
-                                        width={food.width}
-                                        height={food.height}
-                                        alt={food.alt}
-                                        loading="lazy"
+                                        loader={imageSrcLoader}
+                                        src={attributes.Product_image ? attributes.Product_image?.data.attributes.formats.thumbnail.url : ''}
+                                        loading="eager"
+                                        layout="fill"
+                                        alt={attributes.alt}
                                         className="w-100"
                                         />
-                                        <button className="btn food-menu-btn" onClick={()=> addToCart(food)}>
+                                        </div>
+                                        <button className="btn food-menu-btn" onClick={()=> addToCart(attributes)}>
                                         Додати до кошика
                                         </button>
                                     </div>
                                     <div className="wrapper">
-                                        <p className="category">{food.food_category}</p>
-                                        {food.food_category_additional && 
+                                        <p className="category">{attributes.food_category}</p>
+                                        {attributes.food_category_additional && 
                                         <div className="rating-wrapper">
-                                            <div className="category">{food.food_category_additional}</div>
+                                            <div className="category">{attributes.food_category_additional}</div>
                                         </div>
                                         }
                                     </div>
-                                    <h3 className="h3 card-title">{food.food_name}</h3>
+                                    <h3 className="h3 card-title">{attributes.food_name}</h3>
                                     <div className="price-wrapper">
                                         <p className="price-text">Ціна:</p>
-                                        <data className="price">від {food.food_price} грн / кг </data>
+                                        <data className="price">від {attributes.food_price} грн / кг </data>
                                     </div>
                                 </div>
                                 

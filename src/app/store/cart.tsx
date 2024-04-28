@@ -1,5 +1,6 @@
 import {makeAutoObservable} from 'mobx'
 import AppStore from './app';
+import { redirect } from 'next/navigation';
 
 export type ICart = {
     price: number,
@@ -15,13 +16,36 @@ export default class CartStore {
 
     cart:ICart[] = []
 
+    acceptedCart: { product:ICart[], allPrice:number } | undefined;
+
     clearCart(){
         this.cart = []
+    }
+
+    clearAcceptCart(){
+        this.acceptedCart = undefined;
+        if (typeof window !== "undefined") {
+            localStorage.removeItem('accept_cart_info')       
+        }    
+    }
+
+    setAcceptedCart(cart:{ product:ICart[], allPrice:number }):void {
+        this.acceptedCart = cart
     }
 
     updateLocalStorage(){
         if (typeof window !== "undefined") {
             localStorage.setItem('cart_info', JSON.stringify(this.cart))
+        }
+    }
+
+    updateLocalStorageAccept(allPrice: number){
+        const data:{ product:ICart[], allPrice:number } = {
+            product:this.cart,
+            allPrice
+        }
+        if (typeof window !== "undefined") {
+            localStorage.setItem('accept_cart_info', JSON.stringify(data))
         }
     }
 
@@ -48,7 +72,13 @@ export default class CartStore {
     }
     
     acceptCart(){
-        console.log(this.cart)
+        let price = 0;
+        this.cart.map(cart => {
+            for (let i = 0; i < cart.amount; i++){
+                price += Number(cart.price)
+            }
+        })
+        this.updateLocalStorageAccept(price)
         if (typeof window !== "undefined") {
             localStorage.removeItem('cart_info')
         }

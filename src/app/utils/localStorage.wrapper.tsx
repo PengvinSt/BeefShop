@@ -14,6 +14,12 @@ export const LocalStorageWorkerWrapper = ({ children }: { children: ReactNode })
         if (raw_data !== null) {
             const data:ICart[] = JSON.parse(raw_data)
             store.cart.fillCartFull(data)
+        }else {
+            const raw_accept_data = localStorage.getItem('accept_cart_info')
+            if (raw_accept_data !== null) {
+                const data:{ product:ICart[], allPrice:number } = JSON.parse(raw_accept_data)
+                store.cart.setAcceptedCart(data)
+            }
         }
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
