@@ -62,7 +62,7 @@ function Products() {
                                         <div className="image-holder-md">
                                         <Image
                                         loader={imageSrcLoader}
-                                        src={attributes.Product_image ? attributes.Product_image?.data.attributes.formats.thumbnail.url : ''}
+                                        src={attributes.Product_image ? attributes.Product_image?.data.attributes.url : ''}
                                         loading="eager"
                                         layout="fill"
                                         alt={attributes.alt}

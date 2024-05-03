@@ -17,7 +17,7 @@ export default function PostTypeList({data}:PostComponent) {
       <>
         {data.format === 'ordered' ? 
         <ol key={i} className='post-type-list-container'>
-          <li><PostTypeText data={child.children}/></li>
+          <li value={i+1}><PostTypeText data={child.children}/></li>
         </ol>
       :
         <ul key={i} className='post-type-list-container'>

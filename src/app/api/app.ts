@@ -3,7 +3,7 @@ import AppStore from "../store/app";
 import ShopApi from "./shop";
 import EmailApi from "./email";
 
-export const shopBaseUrl = 'http://localhost:3001'
+export const shopBaseUrl = 'https://beefshop-server-production.up.railway.app'
 
 export default class AppApi {
 

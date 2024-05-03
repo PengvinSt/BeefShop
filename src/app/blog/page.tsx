@@ -35,12 +35,12 @@ export default function Blog() {
         <article>
         {/* <!-- - #Blog--> */}
             <section className="margin-start section section-divider gray banner" id="gallery">
-                <div className="container">
+                <div className="container blog-card-container">
                     {posts.map(post =>
                     <>
-                    <h3 className="h3">{post.id}. {post.attributes.post_title}</h3>
-                    <p className="p">{post.attributes.post_description}</p>
-                    <a href={'blog/' + post.id}>
+                    <h3 className="blog-card-title">{post.attributes.post_title}</h3>
+                    <p className="blog-card-description">{post.attributes.post_description}</p>
+                    <a href={'blog/' + post.id} className="blog-card-href">
                         <button >Читати далі...</button>
                     </a>
                     </>)}
