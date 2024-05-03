@@ -5,6 +5,8 @@ import EmailApi from "./email";
 
 export const shopBaseUrl = 'https://beefshop-server-production.up.railway.app'
 
+export const pageUrl = 'https://beef-shop-pengvinsts-projects.vercel.app' 
+
 export default class AppApi {
 
     shop: ShopApi;

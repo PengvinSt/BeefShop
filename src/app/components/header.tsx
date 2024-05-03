@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import { useAppContext } from '../utils/context';
 import { observer } from 'mobx-react';
 import ToTopButton from './button/toTopButton';
+import { pageUrl } from '../api/app';
 
 const toUp = (header:Element,backTopBtn:Element):void => {
     if (window.scrollY >= 100) {
@@ -37,7 +38,7 @@ function Header() {
     const acceptCart = ():void => {
         setOpenModal(false)
         store.cart.acceptCart()
-        window.location.href = "http://localhost:3000/contacts";
+        window.location.href = `${pageUrl}/contacts`;
     }
 
   return (
